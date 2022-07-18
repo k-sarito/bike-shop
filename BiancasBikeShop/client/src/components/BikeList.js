@@ -17,7 +17,7 @@ export default function BikeList({setDetailsBikeId}) {
         <h2>Bikes</h2>
         <div className="bike-cards">
         {bikes.map(bike => {
-            return <BikeCard key={bike.id} bike={bike}/>
+            return <BikeCard key={bike.id} bike={bike} setDetailsBikeId= {setDetailsBikeId}/>
         })}
 
         </div>

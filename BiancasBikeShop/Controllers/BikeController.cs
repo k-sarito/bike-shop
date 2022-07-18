@@ -21,6 +21,7 @@ namespace BiancasBikeShop.Controllers
 
         // Uncomment this and finish these controller methods...
         // 
+        [HttpGet]
         public IActionResult Get()
         {
             // add implementation here...
@@ -33,11 +34,13 @@ namespace BiancasBikeShop.Controllers
         }
 
         // 
-        // public IActionResult Get(int id)
-        // {
-        //     //add implementation here... 
-        //     return Ok();
-        // }
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            //add implementation here... 
+            var bike = _bikeRepo.GetBikeById(id);
+            return Ok(bike);
+        }
 
         // 
         // public IActionResult GetBikesInShopCount()

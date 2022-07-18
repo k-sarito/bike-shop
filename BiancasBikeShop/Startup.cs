@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+
 namespace BiancasBikeShop
 {
     public class Startup
@@ -37,6 +38,7 @@ namespace BiancasBikeShop
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            
 
             app.UseEndpoints(endpoints =>
             {

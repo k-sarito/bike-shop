@@ -1,20 +1,26 @@
 import { useState, useEffect } from "react"
+import { getAllBikes } from "../models/bikeController"
 import BikeCard from "./BikeCard"
 
 export default function BikeList({setDetailsBikeId}) {
     const [bikes, setBikes] = useState([])
 
-    const getAllBikes = () => {
-        //implement functionality here...
+    const getBikes = () => {
+        getAllBikes().then(res => setBikes(res));
     }
 
     useEffect(() => {
-        getAllBikes()
+        getBikes()
     }, [])
     return (
         <>
         <h2>Bikes</h2>
-        {/* Use BikeCard component here to list bikes...*/}
+        <div className="bike-cards">
+        {bikes.map(bike => {
+            return <BikeCard key={bike.id} bike={bike}/>
+        })}
+
+        </div>
         </>
     )
 }
